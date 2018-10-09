@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1 id="basic-specification">BASIC SPECIFICATION</h1>
+<ul>
+  <li>Rails version: 4.2.0</li>
+  <li>Ruby version: 2.2.1</li>
+  <li>RubyGems version: 2.4.5</li>
+  <li>Rack version: 1.5</li>
+  <li>JavaScript Runtime: JavaScriptCore</li>
+  <li>Database adapter: postgresql(, mysql)</li>
+</ul>
+
+<h1 id="getting-started-very-easy-way">Getting Started (Very Easy Way)</h1>
+
+<ul>
+  <li>unzip this project zip file</li>
+</ul>
+
+<p><code>ruby
+$ cd airbnb-clone
+$ bundle update
+$ rake db:migrate (or bundle exec rake db:migrate)
+$ rails s
+</code></p>
+
+<p>and check localhost:3000 or the other specified IP and port from browser</p>
+
+<h2 id="attention">ATTENTION</h2>
+
+<p>By dafult, you can use Gemfile in which gems’ version are specified.
+IF YOU WANT TO USE LATEST VERSION OF GEMS, USE “GEMFILE.no_version”
+<em>(rename this file like Gemfile.version_fixed, and rename Gemfile.no_version to Gemfile)</em>
+(and bundle update again)</p>
+
+<h2 id="listing-option-models">Listing Option Models</h2>
+
+<p>In this program, there are 3 sample models related to listing.
+<em>Confection</em>, <em>Tool</em>, <em>DressCode</em>
+These have listing related information.
+So you would want to change these model as your project personality.
+Then, you have some way to change them.</p>
+
+<p><code>ruby
+$ rails destroy scaffold model_name
+</code></p>
+
+<p>This above is the easiest way.</p>
+
+<h1 id="authentification-oauthsns-login-etc">Authentification, OAuth(SNS Login, etc)</h1>
+
+<ul>
+  <li>
+    <p>Devise</p>
+  </li>
+  <li>
+    <p>config files: config/initializers/devise.rb</p>
+  </li>
+  <li>
+    <p>read: https://github.com/plataformatec/devise</p>
+  </li>
+</ul>
+
+<h2 id="facebook-authentification">Facebook Authentification</h2>
+
+<ul>
+  <li>
+    <p>https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview</p>
+  </li>
+  <li>
+    <p>config files: /config/initializers/devise.rb, /config/secrets.rb, ENV VARIABLES</p>
+  </li>
+</ul>
+
+<h1 id="admin-screen">Admin Screen</h1>
+
+<ul>
+  <li>
+    <p>Active Admin</p>
+  </li>
+  <li>
+    <p>config file: /config/initializers/active_admin.rb</p>
+  </li>
+  <li>
+    <p>read: https://github.com/activeadmin/activeadmin/blob/master/docs/0-installation.md</p>
+  </li>
+</ul>
+
+<h2 id="if-you-want-to-use-other-admin-system">If you want to use other Admin System</h2>
+
+<p>destroy files of active admin.</p>
+
+<p><code>ruby
+$ rails destroy active_admin:install
+</code></p>
+
+<p>If you delete avtive_admin files, db/schema.rb would have wrong infomartion.
+To clean db/schema.rb, you can use rake db:migrate:reset command.
+But this command would erase all data of project database and rebuild structure.
+So you should take care about data and schema.</p>
+
+<h1 id="image-file-upload">Image File Upload</h1>
+
+<h2 id="development">development</h2>
+
+<p>Uploaded files are stored at /public/uploads/
+The cache files are at /tmp/uploads/</p>
+
+<h2 id="staging-production">staging, production</h2>
+
+<ul>
+  <li>CarrierWave</li>
+  <li>
+    <p>AWS S3</p>
+  </li>
+  <li>
+    <p>config file: /config/initializers/carrierwave.rb</p>
+  </li>
+  <li>read: https://github.com/carrierwaveuploader/carrierwave</li>
+</ul>
+
+<h1 id="video-file-upload">Video File Upload</h1>
+
+<p>not implemented
+tba</p>
+
+<h1 id="pager">Pager</h1>
+
+<ul>
+  <li>
+    <p>Kaminari</p>
+  </li>
+  <li>
+    <p>config file: /config/initializers/kaminari.rb</p>
+  </li>
+  <li>
+    <p>read: https://github.com/amatsuda/kaminari</p>
+  </li>
+</ul>
+
+<h1 id="active-record-wrapper">Active Record Wrapper</h1>
+
+<ul>
+  <li>
+    <p>squeel</p>
+  </li>
+  <li>
+    <p>config file: /config/initializers/squeel.rb</p>
+  </li>
+  <li>
+    <p>read: https://github.com/activerecord-hackery/squeel</p>
+  </li>
+</ul>
+
+<h1 id="assets-precompile">Assets Precompile</h1>
+
+<ul>
+  <li>config file: /config/initializers/assets.rb, /config/environments/*.rb</li>
+</ul>
+
+<h1 id="services">Services</h1>
+<p>## job queues
+### Active Job</p>
+
+<ul>
+  <li>resque</li>
+  <li>
+    <p>Redis</p>
+  </li>
+  <li>http://qiita.com/ryohashimoto/items/2f8fd685920a5318def4</li>
+</ul>
+
+<h2 id="cache">cache</h2>
+<p>### Memcached (staging, production)</p>
+
+<h3 id="tmpcache-development">/tmp/cache (development)</h3>
+
+<ul>
+  <li>http://easyramble.com/rails-cache-fetch.htm</li>
+</ul>
+
+<h1 id="cms">CMS</h1>
+
+<ul>
+  <li>
+    <p>activeadmin
+you can access active admin by root_url/admin (e.g. http://localhost:3000/admin)</p>
+  </li>
+  <li>
+    <p>read this: https://github.com/activeadmin/activeadmin/blob/master/docs/0-installation.md</p>
+  </li>
+</ul>
+
+<h1 id="how-to-run-the-test-suite">How to run the test suite</h1>
+
+<ul>
+  <li>no test yet</li>
+</ul>
+
+<h2 id="mail">Mail</h2>
+<p>### Devise Mailer</p>
+
+<ul>
+  <li>used in only devise related program</li>
+</ul>
+
+<h3 id="action-mailer">Action Mailer</h3>
+
+<ul>
+  <li>how to send mail with resque in dev</li>
+</ul>
+
+<p><code>ruby
+$ redis-server
+$ bundle exec rake resque:work
+$ rake environment resque:scheduler
+$ rails server
+</code>
+# I18n
+Now ja and en are ready.</p>
+
+<h2 id="i18n-js">i18n-js</h2>
+<p>i18n for js</p>
+
+<ul>
+  <li>config:
+    <ul>
+      <li>config/i18n-js.yml</li>
+      <li>config/initializers/assets.rb</li>
+    </ul>
+  </li>
+  <li>source: config/locales/js.en.yml or js.ja.yml</li>
+  <li>command to generate i18n file</li>
+</ul>
+
+<p><code>
+$ rake i18n:js:export
+</code></p>
+
+<ul>
+  <li>
+    <p>final file: app/assets/javascripts/i18n/*.js</p>
+  </li>
+  <li>
+    <p>Deployment instructions</p>
+  </li>
+</ul>
+
+<h1 id="for-heroku-deployment">for Heroku Deployment</h1>
+<p>## Addons
+### Database
+- Heroku Postgres</p>
+
+<h3 id="cache-storage">Cache Storage</h3>
+<ul>
+  <li>MemCachier</li>
+</ul>
+
+<h3 id="cron">Cron</h3>
+<ul>
+  <li>Heroku Scheduler</li>
+</ul>
+
+<h3 id="mailer">Mailer</h3>
+<ul>
+  <li>SendGrid (or Mandril)</li>
+</ul>
+
+<h3 id="log">Log</h3>
+<ul>
+  <li>Papertrail</li>
+</ul>
+
+<h3 id="performance">Performance</h3>
+<ul>
+  <li>NewRelic</li>
+</ul>
+
+<h2 id="env-variables">ENV VARIABLES</h2>
+<p>### add env variables below as your project
+- AWS_ACCESS_KEY_ID: “AWS access key id”
+- AWS_REGION:        “S3 region”
+- AWS_S3_BUCKET:     “S3 bucket name”
+- AWS_SECRET_ACCESS_KEY: “aws secret access key “
+- DATABASE_URL:           postgres://~~~~~
+- FACEBOOK_APP_ID:          “FB app id for fb login”
+- FACEBOOK_APP_SECRET:      “FB app secret for fb login”
+- HEROKU_POSTGRESQL_ONYX_URL: “~~~~”
+- LANG:                       “~~~~”
+- MEMCACHIER_PASSWORD:        “~~~~”
+- MEMCACHIER_SERVERS:         “~~~~”
+- MEMCACHIER_USERNAME:        “~~~~”
+- PAPERTRAIL_API_TOKEN:       “~~~~”
+- RACK_ENV:                   staging (or production)
+- RAILS_ENV:                  staging (or profuction)
+- RAILS_SERVE_STATIC_FILES:   enabled
+- SECRET_KEY_BASE:            “~~~~”
+- SENDGRID_PASSWORD:          “~~~~”
+- SENDGRID_USERNAME:          “~~~~”
+- TZ:                         Asia/Tokyo</p>
+
+<h1 id="change-log">Change Log</h1>
+<p>## v1.2.0
+- Brush up UI
+- Refactor all code
+- Adapt Facebook GraphAPI Modification
+- Add Calendar to manage unavailable day for reservation
+  - now having error
+- listing bug fixed
+- Use env variables in local
+  - direnv is recommended
+- change css structure
+- Make JavaScript clean
+- i18n
+  - all text is in config/locale/*
+  - url:
+    - ja: http://—.com/
+    - en: http://—.com/en</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Mon Dec 28 19:23:44 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.1).
+</div>
+
+  </body>
+</html>

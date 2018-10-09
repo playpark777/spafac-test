@@ -1,0 +1,35 @@
+- provide :title, t('.title')
+- provide :description, t('.description')
+- provide :keywords, t('.keywords')
+.hero-wrapper
+  #hero
+    ul#slideshow.list-unstyled
+      - i = 0
+      - @top_page_cover_images.each do |top_page_cover_image|
+        - if i.zero?
+          li.active
+            = image_tag top_page_cover_image.image.url
+        - else
+          li
+            = image_tag top_page_cover_image.image.url
+        - i = i + 1
+  .hero-contents.text-center
+    .va-container.va-container-wh
+      .hero-inner
+        h1#tagline.uppercase.text-jumbo.text-contrast.row-space-1
+          = @top_page_cover_tagline.tagline
+        .col-sm-12
+          #subtitle.h4.text-contrast.row-space-4
+            = @top_page_cover_tagline.sub_tagline
+          .search--sp.show--sp
+            #sp-search-field.input-addon
+              span.input-stem.input-large.fake-search-field
+                = t '.search'
+              i.input-suffix.btn.btn-primary.fa.fa-full.fa-search
+          a.guest-flow-trigger.btn.btn-large.btn-transparent.hide--sp[href="#"]
+            = t '.flow'
+        .hero-search.hide--sp
+          .col-xs-12
+            = render partial: 'form'
+= render partial: 'discovery', locals: {discovery_images: @top_page_discovery_images}
+= render partial: 'belt', locals: {belt_image: @top_page_belt_image}

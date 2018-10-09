@@ -1,0 +1,82 @@
+/* customize.sass */
+
+/* discovery-tile background images
+ ================================================== */
+
+.wall1
+  background-image: image-url('sample/pic/pic003.jpg')
+.wall2
+  background-image: image-url('sample/pic/pic004.jpg')
+.wall3
+  background-image: image-url('sample/pic/pic005.jpg')
+.wall4
+  background-image: image-url('sample/pic/pic006.jpg')
+.wall5
+  background-image: image-url('sample/pic/pic007.jpg')
+.wall6
+  background-image: image-url('sample/pic/pic004.jpg')
+.wall7
+  background-image: image-url('sample/pic/pic008.jpg')
+.wall8
+  background-image: image-url('sample/pic/pic009.jpg')
+.wall9
+  background-image: image-url('sample/pic/pic010.jpg')
+.wall10
+  background-image: image-url('sample/pic/pic011.jpg')
+
+.listing-image-wrapper
+  .panel
+    position: relative
+    .btn-photo-delete
+      position: absolute
+      top: 10px
+      right: 10px
+      width: 25px
+      height: 25px
+      background: #000
+      padding-top: 3px
+      border: 0
+      -webkit-border-radius: 2px
+      -moz-border-radius: 2px
+      border-radius: 2px
+      opacity: .3
+      text-align: center
+      img
+        width: 12px
+        margin-top: -3px
+  img
+    width: 100%
+    &:hover
+      cursor: pointer
+    &:hover + .btn-photo-delete
+      opacity: 1
+  .listing-image-caption-wrapper
+    width: 100%
+  .photo-item
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.1)
+    border: 1px solid #dce0e0
+    &:hover
+      border-color: #aaa
+
+.empty-photo-frame
+  cursor: pointer
+  padding: 62px 10px 52px
+  .empty-photo-image
+    height: 55px
+    width: 55px
+    margin: 12px auto
+    img
+      width: 100%
+  .add-photo-link
+    color: $brand-theme
+    font-size: 16px
+    &:hover
+      cursor: pointer
+
+.js-flash
+  position: fixed
+  bottom: 50px
+  left: 5%
+  right: 5%
+  width: 90%
+  z-index: 2010

@@ -1,0 +1,52 @@
+.card
+  .discovery-container
+    .discovery-section.page-container.page-container-no-padding.row-space-6
+      .section-intro.text-center.row-space-6.row-space-top-8
+        h2.row-space-1.strong
+          = t '.title'
+        p.text-lead
+          = t '.note'
+      .discovery-tiles
+        .row
+          - discovery_images.each do |discovery_image|
+            - if discovery_image.size == 1
+              - if discovery_image.show_price.present? && discovery_image.listing_id.present?
+                - listing = Listing.find discovery_image.listing_id
+                .col-lg-4.col-md-6.col-sm-12.rm-padding--sp.row-space-4
+                  div
+                    .on-hover-container
+                      - if discovery_image.link_url_has_app_domain?
+                        = link_to discovery_image.link_url, class: "link-reset text-normal" do
+                          = render partial: "discovery_card_with_price", locals: {discovery_image: discovery_image, listing: listing}
+                      - else
+                        = link_to discovery_image.link_url, class: "link-reset text-normal", target: "_blank" do
+                          = render partial: "discovery_card_with_price", locals: {discovery_image: discovery_image, listing: listing}
+              - else
+                .col-lg-4.col-md-6.col-sm-12.rm-padding--sp
+                  - if discovery_image.link_url_has_app_domain?
+                    = link_to discovery_image.link_url, class: "link-reset" do
+                      = render partial: "discovery_card_simple", locals: {discovery_image: discovery_image}
+                  - else
+                    = link_to discovery_image.link_url, class: "link-reset", target: "_blank" do
+                      = render partial: "discovery_card_simple", locals: {discovery_image: discovery_image}
+            - elsif discovery_image.size == 2
+              - if discovery_image.show_price.present? && discovery_image.listing_id.present?
+                - listing = Listing.find discovery_image.listing_id
+                .col-lg-8.col-md-12.rm-padding--sp.row-space-4
+                  div
+                    .on-hover-container
+                      - if discovery_image.link_url_has_app_domain?
+                        = link_to discovery_image.link_url, class: "link-reset text-normal" do
+                          = render partial: "discovery_card_with_price", locals: {discovery_image: discovery_image, listing: listing}
+                      - else
+                        = link_to discovery_image.link_url, class: "link-reset text-normal", target: "_blank" do
+                          = render partial: "discovery_card_with_price", locals: {discovery_image: discovery_image, listing: listing}
+              - else
+                .col-lg-8.col-md-12.rm-padding--sp
+                  .discovery-card.rm-padding--sp.row-space-4[style="background-image: url(#{discovery_image.image.url});"]
+                    - if discovery_image.link_url_has_app_domain?
+                      = link_to discovery_image.link_url, class: "link-reset" do
+                        = render partial: "discovery_card_simple", locals: {discovery_image: discovery_image}
+                    - else
+                      = link_to discovery_image.link_url, class: "link-reset", target: "_blank" do
+                        = render partial: "discovery_card_simple", locals: {discovery_image: discovery_image}

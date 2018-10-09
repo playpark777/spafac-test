@@ -1,0 +1,54 @@
+= render partial: 'shared/subnav'
+
+.page-container.row-space-top-4.row-space-8
+  .row
+    .col-lg-3
+      = render partial: 'shared/profile_sidenav'
+    .col-lg-9
+      .card.row-space-4
+        .card-header
+          = t('views.bank_accounts.form.header')
+        .card-body
+          .row.row-condensed.row-space-4
+            h5.text-right.col-3
+              = Bank.human_attribute_name :name
+            .col-8
+              = @bank_account.bank.name
+
+          .row.row-condensed.row-space-4
+            h5.text-right.col-3
+              = BankAccount.human_attribute_name :branch_code
+            .col-8
+              = @bank_account.branch_code
+
+          .row.row-condensed.row-space-4
+            h5.text-right.col-3
+              = BankAccount.human_attribute_name :branch_name
+            .col-8
+              = @bank_account.branch_name
+
+          .row.row-condensed.row-space-4
+            h5.text-right.col-3
+              = BankAccount.human_attribute_name :type_of_bank_account
+            .col-8
+              = @bank_account.type_of_bank_account.name
+
+          .row.row-condensed.row-space-4
+            h5.text-right.col-3
+              = BankAccount.human_attribute_name :number
+            .col-8
+              = @bank_account.number
+
+          .row.row-condensed.row-space-4
+            h5.text-right.col-3
+              = BankAccount.human_attribute_name :name
+            .col-8
+              = @bank_account.name
+
+          .row.row-condensed.row-space-4
+            .col-8.col-offset-3
+              label = t('.delete_msg')
+              = link_to t('.delete'), profile_bank_account_path,
+                class: 'btn btn-danger pull-right', method: :delete, title: @bank_account,
+                data: { confirm: t('.confirm') }
+

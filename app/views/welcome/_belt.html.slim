@@ -1,0 +1,7 @@
+- if belt_image.present?
+  - if belt_image.link_url_has_app_domain?
+    = link_to belt_image.link_url, class: "link-reset", style: "text-decoration:none;" do
+      = render partial: 'belt_detail', locals: {belt_image: belt_image}
+  - else
+    = link_to belt_image.link_url, class: "link-reset", style: "text-decoration:none;", target: "_blank" do
+      = render partial: 'belt_detail', locals: {belt_image: belt_image}

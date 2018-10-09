@@ -1,0 +1,63 @@
+= render partial: 'shared/subnav'
+
+.page-container.row-space-top-4.row-space-8
+  .row
+    .col-lg-3
+      = render partial: 'shared/profile_sidenav'
+    .col-lg-9
+      = simple_form_for(@bank_account, url: profile_bank_account_url,
+        as: :bank_account, html: { class: "form--sp" }) do |f|
+        .card.row-space-4
+          .card-header
+            = t('views.bank_accounts.form.header')
+          .card-body
+            - if flash.now[:messages]
+              .alert-error-messages
+                div
+                  li.error_title
+                    = f.error_notification
+                  - flash.now[:messages].each do |msg|
+                    li
+                      = msg
+                      
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = Bank.human_attribute_name :name
+              .col-8
+                = f.input_field :bank_id, as: :select, collection: Bank.availables
+
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = BankAccount.human_attribute_name :branch_code
+              .col-8
+                = f.input_field :branch_code
+
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = BankAccount.human_attribute_name :branch_name
+              .col-8
+                = f.input_field :branch_name
+
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = BankAccount.human_attribute_name :type_of_bank_account
+              .col-8
+                = f.input_field :type_of_bank_account_id, as: :select,
+                    collection: BankAccountType.availables
+
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = BankAccount.human_attribute_name :number
+              .col-8
+                = f.input_field :number
+
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = BankAccount.human_attribute_name :name
+              .col-8
+                = f.input_field :name
+
+            .row
+              .col-xs-9.col-offset-3.text-reset-center
+                = f.button :submit, t('.submit'), class: 'btn-primary btn-large'
+

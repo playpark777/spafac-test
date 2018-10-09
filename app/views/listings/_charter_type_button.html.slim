@@ -1,0 +1,3 @@
+- if listing.charter_type.present?
+  = link_to "javascript:void(0)", class: "btn btn-guest" do
+    = t("enums.listing.charter_type.#{listing.charter_type}")

@@ -1,0 +1,70 @@
+  .row
+    .col-lg-3
+      ul.sidenav-list
+        li
+          a.sidenav-item[href="#{edit_user_registration_path(mode: "email")}" aria-selected="#{devise_edit_is_email?(@mode)}"]
+            = t '.change.email'
+        li
+          a.sidenav-item[href="#{edit_user_registration_path(mode: "password")}" aria-selected="#{devise_edit_is_password?(@mode)}"]
+            = t '.change.password'
+    .col-lg-9
+      .card.row-space-4
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name,mode: @mode), html: { method: :put }) do |f|
+          = f.input :mode, :as => :hidden, :input_html => { :value => @mode }
+          #change_your_password
+            .card-header
+              - if devise_edit_is_email?(@mode)
+                = t '.header.email'
+              - else
+                = t '.header.password'
+            .card-body
+              = render partial: "users/shared/error_messages", locals: {f: f, mode: @mode}
+              .row
+                .col-md-10
+                  - if devise_edit_is_email?(@mode)
+                    .row.row-condensed.row-space-2
+                      .col-md-5.text-right.text-left--md
+                        label[for="email"]
+                          = t '.email'
+                      .col-md-7
+                        = f.input_field :email, required: true
+                    .row.row-condensed.row-space-2
+                      .col-md-5.text-right.text-left--md
+                        label[for="old_password"]
+                          = t '.current_pw'
+                      .col-md-7
+                        = f.input_field :current_password, required: true
+                  - else
+                    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                      p
+                        = t '.confirm_msg'
+                        = resource.unconfirmed_email
+                    .row.row-condensed.row-space-2
+                      .col-md-5.text-right.text-left--md
+                        label[for="old_password"]
+                          = t '.current_pw'
+                      .col-md-7
+                        = f.input_field :current_password, required: true
+                    .row.row-condensed.row-space-2
+                      .col-md-5.text-right.text-left--md
+                        label[for="user_password"]
+                          = t '.new_pw'
+                      .col-md-7
+                        = f.input_field :password, autocomplete: "off", required: true, class: "input-block", size: "30"
+                    .row.row-condensed.row-space-2
+                      .col-md-5.text-right.text-left--md
+                        label[for="user_password_confirmation"]
+                          = t '.new_pw_confirm'
+                      .col-md-7
+                        = f.input_field :password_confirmation, hint: "we need your current password to confirm your changes", required: true, class: "input-block", size: "30"
+                  .text-right.row-space-top-2
+                    = t('.caution.facebook')
+                    br
+                    = t('.caution.supplemental')
+                .col-md-5
+
+            .card-footer
+              - if devise_edit_is_email?(@mode)
+                = f.button :submit, t('.update.email'), class: "btn btn-color-transition"
+              - else
+                = f.button :submit, t('.update.password'), class: "btn btn-color-transition"

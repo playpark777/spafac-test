@@ -1,0 +1,42 @@
+- left_steps = @listing.left_steps
+- left_step_count = @listing.left_step_count
+.manage-listing-nav.col-md-3
+  .row.nav-sections
+    .section-header.row-space-1
+      = t '.header'
+    ul.list-unstyled.row-space-4
+      li.nav-item class=("nav-active" if controller_name == "listings")
+        = link_to new_or_edit_path(@listing) do
+          = t '.basic_info'
+          i.fa.fa-check
+      li.nav-item class=("nav-active" if controller_name == "listing_images")
+        = link_to manage_listing_listing_images_path(@listing.id) do
+          = t '.image'
+          - if left_steps.has_key?(:listing_image)
+            i.fa.fa-exclamation-circle
+          - else
+            i.fa.fa-check
+      - if Settings.calender_swicth == 'ok'
+        li.nav-item class=("nav-active" if controller_name == "listing_okevents")
+          = link_to manage_listing_listing_okevents_path(@listing) do
+            = t '.cal'
+            i.fa.fa-plus
+      - else
+        li.nav-item class=("nav-active" if controller_name == "listing_ngevents")
+          = link_to manage_listing_listing_ngevents_path(@listing) do
+            = t '.cal'
+            i.fa.fa-plus
+    .col-xs-12.text-center
+      - if left_step_count.zero?
+        = link_to t('.publish'), listing_publish_path(@listing), class: "btn btn-primary btn-block", id: "listing-manager-open"
+      - else
+        = link_to "#", class: "btn btn-primary btn-block disabled" do
+          = t('.step', num: left_step_count)
+      - if @listing.open.present?
+        = link_to listing_unpublish_path(@listing), class: "hide-this-listing" do
+          i.fa.fa-ban
+          = t '.unpublish'
+      - else
+        .unpublished.row-space-top-2
+          i.fa.fa-ban.fa-danger
+          = t '.unpublished'

@@ -1,0 +1,519 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: UserNgevent
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!UserNgevent.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (U)</a> &raquo;
+    
+    
+    <span class="title">UserNgevent</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: UserNgevent
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">UserNgevent</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/user_ngevent.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>== Schema Information</p>
+
+<p>Table name: user_ngevents</p>
+
+<p>id             :integer          not null, primary key
+ user_id        :integer
+ listing_id     :integer
+ reservation_id :integer
+ reason         :string           not null
+ start          :datetime         not null
+ end            :datetime         not null
+ active         :boolean          default(TRUE)
+ created_at     :datetime         not null
+ updated_at     :datetime         not null</p>
+
+<p>Indexes</p>
+
+<p>index_user_ngevents_on_listing_id      (listing_id)
+ index_user_ngevents_on_reservation_id  (reservation_id)
+ index_user_ngevents_on_user_id         (user_id)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#enable_search_condition-class_method" title="enable_search_condition (class method)">+ (Object) <strong>enable_search_condition</strong>(date) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Usage   Listing.where(UserNgevent.enable_search_condition( Time.now ).exists.not).opened.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#ng_days-class_method" title="ng_days (class method)">+ (Tue, ...) <strong>ng_days</strong>(ngevent_id, user_id, listing_id = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#consecutive_days-instance_method" title="#consecutive_days (instance method)">- (1st date, ...) <strong>consecutive_days</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#convert_end_of_day-instance_method" title="#convert_end_of_day (instance method)">- (Object) <strong>convert_end_of_day</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>2015-10-03 00:00:00.000000 -&gt; 2015-10-02 23:59:59.999999.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="enable_search_condition-class_method">
+  
+    + (<tt>Object</tt>) <strong>enable_search_condition</strong>(date) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Usage
+  Listing.where(UserNgevent.enable_search_condition( Time.now ).exists.not).opened</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>Arel::SelectManager</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user_ngevent.rb', line 78</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_enable_search_condition'>enable_search_condition</span><span class='lparen'>(</span> <span class='id identifier rubyid_date'>date</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_listings'>listings</span> <span class='op'>=</span> <span class='const'>Listing</span><span class='period'>.</span><span class='id identifier rubyid_arel_table'>arel_table</span>
+  <span class='id identifier rubyid_ngevents'>ngevents</span> <span class='op'>=</span> <span class='const'>UserNgevent</span><span class='period'>.</span><span class='id identifier rubyid_arel_table'>arel_table</span>
+  <span class='id identifier rubyid_condition'>condition</span> <span class='op'>=</span> <span class='id identifier rubyid_ngevents'>ngevents</span>
+    <span class='period'>.</span><span class='id identifier rubyid_project'>project</span><span class='lparen'>(</span><span class='const'>Arel</span><span class='period'>.</span><span class='id identifier rubyid_star'>star</span><span class='rparen'>)</span>
+    <span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_arel_table'>arel_table</span><span class='lbracket'>[</span><span class='symbol'>:active</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_eq'>eq</span> <span class='kw'>true</span><span class='rparen'>)</span>
+    <span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_arel_table'>arel_table</span><span class='lbracket'>[</span><span class='symbol'>:start</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_lteq'>lteq</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+    <span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_arel_table'>arel_table</span><span class='lbracket'>[</span><span class='symbol'>:end</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_gt'>gt</span> <span class='id identifier rubyid_date'>date</span><span class='rparen'>)</span>
+    <span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='id identifier rubyid_listings'>listings</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_eq'>eq</span><span class='lparen'>(</span> <span class='id identifier rubyid_ngevents'>ngevents</span><span class='lbracket'>[</span><span class='symbol'>:listing_id</span><span class='rbracket'>]</span> <span class='rparen'>)</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="ng_days-class_method">
+  
+    + (<tt>Tue</tt>, ...) <strong>ng_days</strong>(ngevent_id, user_id, listing_id = nil) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Tue</tt>, <tt>29 Sep 2015</tt>, <tt>Wed</tt>, <tt>30 Sep 2015</tt>, <tt>Thu</tt>, <tt>01 Oct 2015</tt>, <tt>Sun</tt>, <tt>11 Oct 2015</tt>, <tt>Mon</tt>, <tt>12 Oct 2015 ...</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+67
+68
+69
+70
+71</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user_ngevent.rb', line 67</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_ng_days'>ng_days</span><span class='lparen'>(</span> <span class='id identifier rubyid_ngevent_id'>ngevent_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_listing_id'>listing_id</span> <span class='op'>=</span> <span class='kw'>nil</span> <span class='rparen'>)</span>
+  <span class='id identifier rubyid_ngs'>ngs</span> <span class='op'>=</span> <span class='const'>UserNgevent</span><span class='period'>.</span><span class='id identifier rubyid_opened'>opened</span><span class='period'>.</span><span class='id identifier rubyid_not_me'>not_me</span><span class='lparen'>(</span><span class='id identifier rubyid_ngevent_id'>ngevent_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_mine'>mine</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_ngs'>ngs</span> <span class='op'>=</span> <span class='id identifier rubyid_ngs'>ngs</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>listing_id:</span> <span class='id identifier rubyid_listing_id'>listing_id</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='id identifier rubyid_listing_id'>listing_id</span>
+  <span class='id identifier rubyid_ngs'>ngs</span><span class='period'>.</span><span class='id identifier rubyid_map'>map</span><span class='lparen'>(</span> <span class='op'>&amp;</span><span class='symbol'>:consecutive_days</span> <span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="consecutive_days-instance_method">
+  
+    - (<tt>1st date</tt>, ...) <strong>consecutive_days</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>1st date</tt>, <tt>2nd date</tt>, <tt>3rd date</tt>, <tt>...</tt>, <tt>last date</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+54
+55
+56</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user_ngevent.rb', line 54</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_consecutive_days'>consecutive_days</span>
+  <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span> <span class='op'>..</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span><span class='period'>.</span><span class='id identifier rubyid_to_date'>to_date</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_a'>to_a</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="convert_end_of_day-instance_method">
+  
+    - (<tt>Object</tt>) <strong>convert_end_of_day</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>2015-10-03 00:00:00.000000 -&gt; 2015-10-02 23:59:59.999999</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'><p>self</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/user_ngevent.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_convert_end_of_day'>convert_end_of_day</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span> <span class='op'>=</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_start'>start</span><span class='period'>.</span><span class='id identifier rubyid_beginning_of_day'>beginning_of_day</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span>   <span class='op'>=</span> <span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_end'>end</span> <span class='op'>-</span> <span class='int'>1</span><span class='period'>.</span><span class='id identifier rubyid_day'>day</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_end_of_day'>end_of_day</span>
+  <span class='kw'>self</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Dec 28 19:23:44 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.1).
+</div>
+
+  </body>
+</html>

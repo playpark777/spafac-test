@@ -1,0 +1,21 @@
+.row
+  - @listing_images.each do |image|
+    .col-lg-4.col-md-4.listing-image-wrapper.matchHeight
+      = simple_form_for([@listing, image], html: {class: "form--sp"} ) do |f|
+        .panel.photo-item
+          = image_tag(image.image.thumb)
+          = link_to listing_listing_image_path(@listing, image), method: :delete, rel: "nofollow", class: 'btn-photo-delete', data: { confirm: "本当に削除しますか？" } do
+            = image_tag 'icons/delete.png'
+          .listing-image-caption-wrapper.panel-body.panel-condensed
+            = f.input_field :caption, as: :text, placeholder: t('activerecord.placeholders.listing_image.caption')
+          .text-center.row-space-2
+            = f.button :submit, "更新", class: "btn-primary text-center", id: 'listing-manager-listing-image-submit'
+  .col-lg-4.col-md-4
+    .panel.photo-item.empty-photo-frame
+      = simple_form_for([@listing, @listing_image], html: {class: "form--sp", multipart: true} ) do |f|
+        = f.error_notification
+        = f.hidden_field :listing_id, value: @listing.id
+        .empty-photo-image
+          = image_tag 'icons/photo.png'
+        = f.label :image, "画像を追加する", class: 'text-center add-photo-link row-space-4 row-space-top-4'
+        = f.file_field :image, as: :file, style: 'display:none;', data: { listing_id: @listing.id }, class: "file_input"

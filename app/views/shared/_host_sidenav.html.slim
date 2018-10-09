@@ -1,0 +1,12 @@
+ul.sidenav-list
+  li
+    = link_to t('.listing'), listings_path, aria: {selected: (action_name != "host_reservation_manager")}, class: "sidenav-item"
+  li
+    = link_to 'お気に入り', favorites_path, aria: {selected: (controller_name == "favorites" && action_name == "index")}, class: "sidenav-item"
+  li
+    = link_to t('.host_reservation_manager'), dashboard_host_reservation_manager_path, aria: {selected: (action_name == "host_reservation_manager")}, class: "sidenav-item row-space-2"
+  li
+    = link_to new_listing_path, class: "btn btn-host" do
+      span.hide--sp
+        = t '.text1'
+      = t '.text2'

@@ -1,0 +1,21 @@
+- if listing.listing_images.count > 1
+  .slider-pro#js-listing-show-slider
+    .sp-slides
+      - listing.listing_images.each do |image|
+        .sp-slide
+          .photo-trigger
+            = image_tag(image.try('image') || Settings.images.noimage2.url, class: 'img-responsive')
+            .row
+              .col-lg-12.row-space-top-1
+                p.text-muted.pull-left.word_break
+                  = image.try('caption') || ''
+
+- elsif listing.listing_images.count == 1
+  - listing.listing_images.each do |image|
+    .photo-trigger
+      = image_tag(image.try('image') || Settings.images.noimage2.url, class: 'img-responsive')
+    .row
+      .col-lg-9
+        p.text-muted.pull-left.row-space-top-1
+          = image.try('caption') || ''
+      .col-lg-3

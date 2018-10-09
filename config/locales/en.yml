@@ -1,0 +1,1086 @@
+en:
+  activerecord:
+    models:
+      admin_user: Admin User
+      auth: Auth
+      bank: Bank
+      bank_account: Bank Account
+      bank_account_type: Bank Account Type
+      browsing_history: Browsing History
+      comment: Comment
+      emergency: Emergency
+      identification: Identification
+      inquiry: Inquiry
+      listing: Listing
+      listing_image: Listing Image
+      listing_pv: Listing PV
+      listing_video: Listing Video
+      message: Message
+      message_thread: Message Thread
+      message_thread_user: Message Thread User
+      profile: Profile
+      profile_image: Profile Image
+      profile_video: Profile Video
+      reservation: Reservation
+      review: Review
+      review_reply: Reply of Reviews
+      top_page_cover_image: Top Page - Main Image Setting
+      top_page_cover_tagline: Top Page - Main Tagline Setting
+      top_page_discovery_image: Top Page - Discovery Image Setting
+      top_page_belt_image: Top Page - Belt Image Setting
+      user: User
+      user_ngevent: Unavailable Day
+      wishlist: Wishlist
+    attributes:
+      admin_user:
+        email: Mail Address
+        encrypted_password: Password
+        reset_password_sent_at: Password Reset Mail Sent At
+        sign_in_count: Login Count
+        current_sign_in_at: Current Login at
+        last_sign_in_at: Last Login at
+        current_sign_in_ip: Current IP Address
+        last_sign_in_ip: Last IP Address
+      auth:
+        provider: Auth Service
+        uid: Unique ID
+        access_token: Access Token
+      bank:
+        name: Bank Name
+        code: Bank Code
+        available: Available
+      bank_account:
+        branch_code: Branch Code
+        branch_name: Branch Name
+        type_of_bank_account: Type of Bank Account
+        number: Account Number
+        name: Account Name
+      bank_account_type:
+        name: Name
+        available: Available
+      emergency:
+        name: Name
+        phone: Phone Number
+        email: Email
+        relationship: Relationship
+      identification:
+        image1: Image 1
+        image2: Image 2
+        image3: Image 3
+        note: Note
+        status: Status
+        status_i18n: Status
+        reason: Reason
+        processed_at: Processed at
+        processed_by: Processed by
+        identification_type: Identification Type
+      identification_type:
+        name: Name
+        available: Available
+      inquiry:
+        title: Title
+        name: Name
+        email: Email
+        body: Body
+        status: Status
+        note: Note
+        user: User
+        remote_ip: IP Address
+        user_agent: User-Agent
+        assignee: Assignee
+      listing:
+        title: Title
+        zipcode: Zipcode
+        location: Location
+        longitude: Longitude
+        latitude: Latitude
+        delivery_flg: Delivery?
+        description: Description
+        price: Price
+        capacity: Capacity
+        title: Title
+        direction: Direction to Listing Location
+        cover_image: Cover Image
+        cover_image_caption: Caption of Cover Image
+        schedule: Schedule
+        ave_total: Average of Total Value
+        ave_accuracy: Average of Accuracy Value
+        ave_communication: Average of Communication Value
+        ave_cleanliness: Average of Cleanliness Value
+        ave_location: Average of Location Value
+        ave_check_in: Average of Check In Value
+        ave_cost_performance: Average of Cost Performance Value
+      listing_image:
+        image: Image of Listing
+        caption: Caption of Listing Image
+        order_num: Order
+      listing_pv:
+        pv: PV
+      message:
+        to_user: To User
+        from_user: From User
+        read_at: Read At
+        content: Content
+        read: Status
+      message_thread:
+        messages: Messages
+        message_thread_users: Message Thread Users
+        users: Users
+      profile:
+        first_name: First Name
+        last_name: Last Name
+        birthday: Birthday
+        gender: Gender
+        phone: Phone Number
+        zipcode: Zipcode
+        location: Location
+        self_introduction: Self Introduction
+        phone_verification: Phone Verification
+        school: School
+        work: Work
+        timezone: Timezone
+        ave_total: Average of Total Value
+        ave_accuracy: Average of Accuracy Value
+        ave_communication: Average of Communication Value
+        ave_cleanliness: Average of Cleanliness Value
+        ave_location: Average of Location Value
+        ave_check_in: Average of Check In Value
+        ave_cost_performance: Average of Cost Performance Value
+      profile_image:
+        caption: Caption
+        image: Profile Image
+      reservation:
+        schedule: Schedule
+        num_of_people: The num of people
+        msg: Message
+        progress: Progress
+        reason: Reason
+        price: Price
+        review_mail_sent_at: Review Mail Sent At
+        review_expiration_date: Review Expiration Date
+        review_landed_at: Review Landed At
+        reviewed_at: Reviewed At
+        reply_mail_sent_at: Reply Mail Sent At
+        reply_landed_at: Reply Page Landed At
+        replied_at: Replied At
+        review_opened_at: Review Page Opened At
+        host: Host
+        guest: Guest
+        ngevent: NG Days
+        checkin: Check in
+        checkout: Check out
+      review:
+        msg: Message
+        total: Total Value
+        accuracy: Accuracy Value
+        communication: Communication Value
+        cleanliness: Cleanliness Value
+        location: Location Value
+        check_in: Check In Value
+        cost_performance: Cost Performance Value
+      review_reply:
+        msg: Message
+      top_page_cover_image:
+        image: Image
+        order_num: Order to show
+      top_page_cover_tagline:
+        tagline_ja: Tagline(ja)
+        sub_tagline_ja: Sub Tagline(ja)
+        tagline_en: Tagline(en)
+        sub_tagline_en: Sub Tagline(en)
+        tagline_zh_cn: Tagline(zh-CN)
+        sub_tagline_zh_cn: Sub Tagline(zh-CN)
+      top_page_discovery_image:
+        image: Image
+        tagline_ja: Tagline(ja)
+        tagline_en: Tagline(en)
+        tagline_zh_cn: Tagline(zh-CN)
+        link_url: Link URL
+        order_num: Order to show
+      top_page_belt_image:
+        image_flg: Image Flg
+        image: Image
+        color: Color
+        tagline_ja: Tagline(ja)
+        sub_tagline_ja: Sub Tagline(ja)
+        tagline_en: Tagline(en)
+        sub_tagline_en: Sub Tagline(en)
+        tagline_zh_cn: Tagline(zh-CN)
+        sub_tagline_zh_cn: Sub Tagline(zh-CN)
+        link_url: Link URL
+      user:
+        email: Email Address
+        username: Username
+        password: Password
+        current_password: Current Password
+        password_confirmation: Confirmation Password
+        encrypted_password: Encrypted Password
+        reset_password_token: Reset Password Token
+        reset_password_sent_at: Reset Password Sent At
+        remember_created_at: Remember Created At
+        current_sign_in_at: Current Sign in At
+        last_sign_in_at: Last Sign In At
+        current_sign_in_ip: Current Sign In IP
+        last_sign_in_ip: Last Sign In IP
+        confirmation_token: Confirmation Token
+        confirmed_at: Confirmed At
+        confirmation_sent_at: Confirmation Sent At
+        unconfirmed_email: Unconfirmed Email
+        failed_attempts: Failed Attempts
+        unlock_token: Unlock Token
+        locked_at: Locked At
+        uid: Unique ID
+        provider: Auth Provider
+      wishlist:
+        name: Name
+    placeholders:
+      listing:
+        title: e.g. Listing for everybody
+        price: e.g. 5000
+        longitude: Longitude
+        latitude: Latitude
+        description: e.g. This is a good listing even for beginner. Join us inviting friends.
+        zipcode: "e.g. 012-3456"
+        location: Input zipcode, and the address is automatically show up.
+        direction: Write minute direction to your listing location
+        schedule: Schedule
+      listing_image:
+        caption: e.g. Like this....
+      reservation:
+        schedule: "Y/M/D"
+      review:
+        msg: "e.g. I had really fun time. Thank you for very kind omotenashi"
+      inquiry:
+        title: 'Question About FooBar'
+        name: 'John Doe'
+        email: 'example@example.com'
+        body: 'Text of your inquiry'
+  attributes:
+    id: ID
+    user: User
+    auths: Auths
+    profile: Profile
+    profile_image: Profile Image
+    profile_video: Profile Video
+    listing: Listing
+    listings: Listings
+    listings_images: Listing Images
+    listing_id: &LISTING_NAME Listing
+    listing_ngevents: Listing NG Days
+    open: Open
+    reservation: Reservation
+    reservations: Reservations
+    review: Review
+    reviews: Reviews
+    review_reply: Review Reply
+    guest_id: &GUEST Guest
+    host_id: &HOST Host
+    user_id: User
+    video: Video
+    message_thread: Message Thread
+    message_threads: Message Threads
+    messages: Messages
+    message_thread_users: Message Thread Users
+    users: Users
+    caption: Caption
+    viewed_at: Viewed At
+    created_at: Created At
+    updated_at: Updated At
+  basic_info:
+    service_name: Service Name
+  meta_tags:
+    og:
+      title: Service Name
+      site_name: Site Name
+      description: Description
+    title:
+      base_title: Basic Title
+      separator: " - "
+    description:
+      base_description: Basic Description
+    keywords:
+      base_keywords: Basic Keywords
+    author: Author
+  shared:
+    modals:
+      flow:
+        step1:
+          title: 1. Search!
+          text: Let's search %{listing}、Favorite %{host}!!
+        step2:
+          title: 2. Reserve!
+          text: Reservation is very easy. You can communicate to host so easily!
+        step3:
+          title: 3. Enjoy!
+          text: Brilliant time is waiting for you very near to you. Let's enjoy new Listing.
+        close: Close
+      message_to_host:
+        label: "Contact to %{host}"
+        placeholder: "Can I join this listing yet?"
+        submit: "Send %{msg}"
+      message_to_host_from_reservation_manger:
+        label: Contact to %{host}
+        placeholder: "e.g. I can't wait for the day"
+        submit: Send
+        cancel: Cancel
+        to1: "To "
+        to2: ""
+        progress:
+          select: Accept?
+          select_by_guest: Cencel?
+      message_to_guest_from_reservation_manger:
+        title: "Answer the %{rsrv} Request"
+        placeholder: e.g. No parking slot. Please use public transportation.
+        submit: Answer
+        to1: "To "
+        to2: ""
+        selected:
+          continued: Accept?
+          accepted: You've accepted. Change status?
+          rejected: You've rejected. Change status?
+        text:
+          hold: hold
+          accept: accept
+          reject: reject
+    facebook_connect_bar:
+      connect: Connect
+      read_next: Read More
+      msg: Share to Facebook Friends
+      logging_in: "Now Logging in..."
+    footer:
+      corporate:
+        title: Corporate Info
+        about: About this service
+        inquiry: Inquiry
+        privacy: Privacy policy
+      social_media:
+        title: Social media
+      copyright: "copyright 'corporate name'"
+    guest_sidenav:
+      link: Joined Listings
+      guest_reservation_manager: Reserve
+    header:
+      new_listing: Make New Listing
+      dashboard: Dashboard
+      listings: Listings
+      host_reservation_manager: Reservation Manager
+      guest_reservation_manager: Join
+      profile: Profile
+      account: Account
+      logout: Logout
+      login: Login
+      signup: Sign Up
+      messages: "Messages "
+      search: Location
+      help: Help
+    header_form:
+      location:
+        placeholder: Location
+    header_form_sp:
+      num_of_guest:
+        unit_text: "%{num}"
+        more_than: "more than %{num}"
+      location:
+        placeholder: Location
+      schedule:
+        placeholder: Date
+      submit: Search
+    host_sidenav:
+      text1: Add
+      text2: Listing
+      listing: Listing
+      host_reservation_manager: Reservation Management
+    manage_listing_header:
+      to_my_listings: Show My Listings
+      preview: Preview
+    manage_listing_nav:
+      header: Listing Info
+      basic_info: Basic Info
+      image: Image
+      cal: Calendar
+      item: "%{model}%{opt}"
+      opt1: (option1)
+      opt2: (option2)
+      opt3: (option3)
+      publish: publish
+      step: "%{num} steps left"
+      unpublish: unpublish
+      unpublished: now not published
+    profile_sidenav:
+      edit: Edit Profile
+      edit_image: Edit Profile Image
+      edit_identification: Edit Identification
+      edit_bank_account: Edit Bank Account
+    sidebar_nav_sp:
+      home: Home
+      dashboard: Dashboard
+      new_listing: Make New Listing
+      message: Message
+      unread_msg: "Unread: %{num}"
+      host_reservation_manager: Manage Reservation
+      profile: Profile
+      account: Account
+      login: Login
+      guest_flow: Flow of Service
+      search: Serach Listings
+      help: Help
+      logout: Logout
+    subnav:
+      dashboard: Dashboard
+      messages: Messages
+      listings: Listings
+      guest_reservation_manager: Reserve
+      profile: Profile
+      account: Account
+    tooltip:
+      all_user:
+        title: All User
+        text: Open for all user. Anybody can see in your open profile.
+      only_me:
+        title: Only You
+        text: No one can see except you.
+      zipcode: Input valid zipcode, and address is automatically shown.
+      delivery:
+        title: Delivery
+        text: If you can visit somewhere, check this.
+      reliability:
+        title: Take it easy!
+        text_html: "You can communicate to guests as you like.<br>You can reject delivery request."
+    triplets:
+      first:
+        title: You can choose guest
+        text: Reading reviews, setting condition, comunicate to guest before trip. You can choose guest you like.
+      second:
+        title: Guarantee max $800,000,000
+        text1:  Sometimes accident happens
+        link: Host Guarantee
+        link_text: "Promises max $800,000,000 if the listing gets trouble. You don't need to have any cost."
+      third:
+        title: Secure Payment
+        text: "You can choose rapid and flexible payment system. Host can receive fees after 24 hr from guest checked in."
+  bank_accounts:
+    show:
+      delete_msg: If you wants update your bank account, please delete it first.
+      delete: Delete
+      confirm: You cannot cancel this operation after click yes.You sure?
+    new:
+      submit: Save
+  dashboard:
+    index:
+      title: Dashboard
+      profile:
+        show: "View %{profile}"
+        edit: "Edit %{profile}"
+      alert:
+        header: Notification
+        host_reservation_manager_link: "%{num} Reservation Requests!!"
+        message_thread_link: "%{num} %{model}!!"
+        all_read: You have read all.
+      message:
+        unread_html: "<b class='count'>%{num}</b> Unread %{model}"
+        all_read_html: "All %{model} is read"
+        all: "Show all %{model}"
+    host_reservation_manager:
+      title: "%{rsrv} Status List"
+      no_req: "No %{rsrv_req}"
+    guest_reservation_manager:
+      title: "Scheduled %{listing}"
+      no_schedule: No Schedule
+      form:
+        placeholder: Location
+        submit: Search
+    reservation_item_as_guest:
+      progress:
+        requested: Waiting for reply
+        canceled: Canceled
+        accepted: Accepted
+        rejected: Rejected
+        holded: Holded
+        unpublished: No Open
+      msg: "  %{model}"
+      receipt: " Receipt"
+    reservation_item_as_host:
+      progress:
+        requested: Please Reply
+        canceled: Canceled
+        accepted: You Accepted
+        rejected: You Rejected
+        holded: Holded
+        unpublished: You unpublished
+      reply: "  Reply"
+      contact: "  Send %{model}"
+  inquiries:
+    new:
+      page_title: 'Inquiry Form'
+      submit: 'Submit'
+    confirm:
+      page_title: 'Confirmation'
+      submit: 'Submit'
+  listing_images:
+    manage:
+      title: "Add more %{listing_image}"
+      text_html: "To appeal your %{listing} to %{guest}, add %{listing_image}"
+    form:
+      submit: Save
+  listing_ngevents:
+    manage:
+      title: "Set %{model}"
+      text: "Click or drag cell of calendar, and you can set %{model}"
+      label1: Unavailable day already set
+      label2: Reserved day
+    form:
+      button: Delete unavailable day
+    reason:
+      reason:
+        holiday: Unavailable Day
+        reserved: Reserved
+        canceled: Canceled
+  listings:
+    index:
+      no_listing:
+        title: No Scheduled Listing
+        guests_waiting: Someone is waiting for your listing!
+        invitation: Invite friends! Let's appeal your listing!
+        make_listing: Make New Listing
+      title: Listings
+      all:
+        long: All Listings
+        short: All
+      open:
+        long: Published Listings
+        short: Published
+      closed:
+        long: Unpublished Listings
+        short: Unpublished
+      add: Add
+      edit: Edit this Listing
+      make_listing: Make New listing
+    new:
+      title: Make New Listing
+      subtitle: You can make listing easily
+    search:
+      title: Search
+      no_match:
+        sidebar:
+          text1: No matched
+          text2: Change search words.
+        map:
+          text: No matched
+      map:
+        search: Search again
+        search_on_map: Move Map, and Refresh.
+      filter:
+        num_of_guest:
+          more_than: "more than %{num}"
+        text: "Show listings with %{model}%{opt}"
+        text3: "Only %{model} %{opt}"
+        search_word: Search Condition
+        option1: (Option1)
+        option2: (Option2)
+        option3: (Option3)
+        others:
+          label: Others
+          placeholder: Keyword info
+        submit: Show listings
+        add_search_condition: Add Condition
+        submit_sp: Search Again
+        hit_count:
+          dot: /
+    delivery_ok_button:
+      text: delivery
+    detail:
+      about_this_listing: About this listing
+      contact_to_host: Contact to this host
+      delivery: delivery
+      option:
+        option1: Option 1
+        option2: Option 2
+        option3: Option 3
+    edit:
+      title: Edit Listing
+    edit_link:
+      title: This is Your Listing.
+      edit: Edit this listing.
+    form:
+      price: "(%{unit})"
+      submit:
+        update: update
+        next: next
+      caution:
+        price: Never user comma (,)
+      delivery:
+        label: delivery
+        name: ok
+      capacity:
+        more_than: "more than %{num}"
+    host_info:
+      name:
+        after: "'s info"
+      profile:
+        link: View Profile
+      show_all: Show all
+      joined_date: "joined at: "
+      reply_rate: "The rate of reply: "
+      latest_msg: Latest message
+      reply_time: "Reply time: "
+      review_num: "Review Num: "
+      contact_to_this_host: Contact to this host
+    review_item:
+      show_all: Show All
+      reply_from_host: "Reply from Host: "
+    request_block:
+      price:
+        per_attend: per attend
+      submit: request reservation
+      pv:
+        text: "The num of view in this week is %{num}."
+      share:
+        title: "Share: "
+        line:
+          text: LINE
+      cancel:
+        text: Once you cancel, you can request to pay whole fee back.
+    similar_listings:
+      title: Similar listings
+    subnav:
+      my_listing: My Listing List
+      photos: Photos
+      details: Details
+      reviews: Reviews
+      host_profile: Host Profile
+      neighborhood: Location
+      request: Request reservation
+    show:
+      title: Listing Details
+      request: "Request %{rsrv}"
+  message_threads:
+    form:
+      placeholder: Write message here
+      submit: "Send %{msg_model}"
+    listing_block:
+      name: "%{model} name: "
+      progress: "%{progress}: "
+      schedule: "%{title}: %{schedule}"
+      num_of_people: "%{title}: %{num}%{unit}"
+      price:
+        title: Price(not fixed)
+        text: Price is fixed after reservation is fixed
+      show_detail: Show reservation detail
+    profile_block:
+      name: "%{name}"
+      no_location: No location registered
+      joined: "Joined at: "
+    index:
+      title: "%{model} Index"
+      msg: "When you send %{msg1} or %{msg2}% to {host}, you can see replies from %{host} here."
+    show:
+      title: "Conversation with %{name}"
+    my_msg:
+      read: Read
+  profile_images:
+    edit:
+      title: "Edit %{model}"
+    form:
+      header: Required
+      text1: Square image is recommended
+      text2: Comment to image
+      text3: Open for only joined users
+      submit: Save
+  profiles:
+    edit:
+      title: "Edit %{model}"
+    show:
+      review: "The num of %{model} is <span><h5>{num}"
+      self_introduction:
+        msg: Hello! This is %{name}!
+      reviewed:
+        reviewed_num: "(%{num})"
+        show_all: Show All
+        reply: "Reply: "
+      left_column:
+        title: "Opened %{listing}"
+        listing_num: (num)
+        delivery_ok: Delivery
+    review:
+      tab:
+        to_you: "%{model} to you"
+        from_you: "%{model} from you"
+      text: "%{model} will be written after %{listing} schedule. %{model} about you will be shown here and your %{profile}"
+      no_review: "%{model} about you has been 0%{unit} yet"
+      to_you: "%{model} to you"
+      no_target: "No %{model} target"
+      old: "%{model} you've written"
+      no_old: "No person you've written %{model} for"
+    form:
+      header: Required
+      text_closed: No other user can access this information
+      text_limited: Only joined user can access this information
+      year: Y
+      month: M
+      day: D
+      gender:
+        female: female
+        male: male
+        others: others
+        not_specified: not specified
+      placeholder:
+        phone: e.g. +83 80 1111 xxxx
+        zipcode: e.g. 012-3456
+        location: "Input zipcode, and address roughly be shown up automatically"
+      intro: "Write good self-introduction, Let others know you and %{listing} more!"
+      submit: Save
+    edit_link:
+      title: "Your %{profile}"
+      edit: "Edit %{profile}"
+  review_replies:
+    new:
+      text0: "Reply to "
+      name: "%{name}"
+      text1: ""
+      text2_html: "You got %{review} of %{listing}.<br>Let's reply."
+    form:
+      submit: Reply
+  reviews:
+    new:
+      text0: "Send %{review} to "
+      name: "%{name}"
+      text1: ""
+      msg_html: "You can send %{review} of %{listing} to %{host}.<br>Take it easy. You should write honestly.<br>Your %{review} helps %{host} to revise %{listing}."
+    form:
+      placeholder: e.g. Really good person! I want to use this again!!
+      msg: "Evaluate %{listing}"
+      submit: Send Review
+  users:
+    confirmations:
+      new:
+        title: Resend Confirmation Mail
+        header: Resend Confirmation Mail
+        msg_html: "Resend Confirmation Main.<br>Input you mail address and click resend button."
+        placeholder: Mail Address
+        submit: Resend
+        back_text: Back to Login?
+        back: Back
+    passwords:
+      new:
+        header: Change Password
+        msg_html: "Reset Password.<br>Input mail address and click send button. You will recieve mail for password reset."
+        placeholder: Mail Address
+        submit: Send
+        back_text: Back to Login?
+        back: Back
+      edit:
+        header: Change Password
+        title: Change Password
+        placeholder:
+          password: Password
+          password_confirmation: Password Confirmation
+        submit: Change
+        back_text: Back to Login?
+        back: Back
+    registrations:
+      new:
+        title: Sign Up
+        facebook:
+          title: Regist via Facebook
+          sub: ''
+        or: Or
+        mail:
+          title: Regist via EMail
+          placeholder:
+            mail: Mail Address
+            pw: Password
+            pw_confirm: Password Confirmation
+        submit: Regist
+        text0: Once You Regist, You agree with contents below
+        text1: ''
+        terms_of_use: term of use
+        privacy: privacy policy
+        payback: pay-back policy
+        host: Host Insurance
+        registered: Already member?
+        login: Login
+      edit:
+        title: Edit User Info
+      form:
+        change:
+          email: Change Email
+          password: Change Password
+
+        sidenav_item: Basic Info
+        header:
+          email: Change Email
+          password: Change Password
+        email: Email
+        confirm_msg: "We sent confirmation mail to mail address below. Please check it and activate your account.: "
+        current_pw: Current Password
+        new_pw: New Password
+        new_pw_confirm: New Password Confirmation
+        update:
+          email: Update Email
+          password: Update Password
+        caution:
+          facebook: "Password and e-mail address change column"
+          supplemental: "(you can not change those who have registered with Facebook)"
+    sessions:
+      new:
+        title: Login
+        facebook: Facebook Login
+        or: Or
+        remember: Remember
+        login: Login
+        placeholder:
+          mail: Mail Address
+          pw: Password
+        forgot_pw: Forgot password?
+        account: "Don't you have an account?"
+        confirmation: Never receive confirmation mail?
+        regist: Regist
+        resend: Resend
+  welcome:
+    index:
+      title: Title of Top Page
+      description: Description of Top Page
+      keywords: Keywords of Top Page
+      tagline: Tagline
+      subtitle: Subtitle
+      search: "Let's Search Listings"
+      flow: Flow of Service
+    form:
+      num_of_guest:
+        unit_text: "%{num}"
+        more_than: "more than %{num}"
+      placeholder:
+        schedule: Date
+        location: Location
+      submit: Search
+    discovery:
+      title: Discovery
+      note: "Why don't you check suggestions?"
+      item:
+        price:
+          value: 3,000
+        title: "Tomoaki's Listing"
+        category_name: Category name
+  message_mailer:
+    send_new_message_notification:
+      subject: New Message is arrived!
+      greeting1: "Hello! "
+      greeting2: ""
+      msg1: "You got a message from "
+      msg2: ""
+      msg3: Check the detail through a link below.
+  identification_mailer:
+    send_identification_is_approved_notification:
+      subject: "Your Identification was approved!"
+      greeting1: "Hello, "
+      greeting2: "!"
+      msg1: "Your Identification was approved."
+      msg2: "You will be able to use our service!"
+      msg3: "Please use the service in the following link."
+    send_identification_is_rejected_notification:
+      subject: "Sorry, your identification was rejected."
+      greeting1: "Hello, "
+      greeting2: "!"
+      msg1: "Sorry, your identification was rejected."
+      msg2: "Please Re-Upload another your identification after checking following reason."
+      reason: "[Reason]"
+  reservation_mailer:
+    send_new_reservation_notification:
+      subject: New Reservation Request is arrived.
+      greeting1: "Hello! "
+      greeting2: ""
+      msg1: "You got a reservation request from "
+      msg2: ""
+      msg3: Check the detail through a link below.
+    send_update_reservation_notification:
+      subject:
+        canceled: Reservation request was canceled.
+        holded: Reservation request was holded.
+        accepted: Reservation request was accepted.
+        rejected: Reservation request was rejected.
+      greeting1: "Hello! "
+      greeting2: ""
+      msg1: "A reservation status was updated. "
+      msg2: ""
+      msg3: Check the detail through a link below.
+  review_mailer:
+    send_review_mail:
+      subject: "Let's write a review!"
+    send_review_notification:
+      greeting1: "Hello! "
+      greeting2: ""
+      msg1: "Let's write %{review} of %{host}'s %{listing}, %{listing_title} (%{schedule})"
+      msg2: "You can write %{review} from the link below."
+      msg3: "Once you write %{review}, you get reply from %{host}."
+      msg4: "After you get %{review_reply}, %{review} would be published."
+      msg5: "And, you have %{term} days to write %{review}."
+    send_review_reply_mail:
+      subject: "Let's reply to the review!"
+    send_review_reply_notification:
+      greeting1: "Hello! "
+      greeting2: ""
+      msg1: "Let's write %{review} to %{guest} who joined %{listing_title} (%{schedule})"
+      msg2: "You can write %{review} from the link below."
+      msg3: "After you write %{review}, it would be shown in %{profile} page and others."
+    send_review_opened_notification:
+      subject: "Your review has been opened!"
+      greeting1: "Hello! "
+      greeting2: ""
+      msg1: "Your %{review} of %{host}'s %{listing} has been opened!"
+      msg2: "You can see %{review} from the link below."
+  kaminari:
+    first_page:
+      first: first
+    gap:
+      truncate: " ... "
+    last_page:
+      last: last
+    next_page:
+      next: " > "
+    prev_page:
+      previous: " < "
+  unit:
+    price: $
+    people: ''
+    listing: listings
+    review: ''
+    hit_count: hits
+  name:
+    reservation_request: Reservation Request
+    guest: Guest
+    host: Host
+  prefix: ''
+  to1: "To "
+  to2: ""
+  message:
+    save:
+      success: "Sent"
+      failure: "Couldn't Sent"
+    read:
+      string: "Read "
+    unread:
+      string: "Unread "
+    waiting_for_read:
+      string: "Waiting for read"
+    already_read:
+      string: "Already been read"
+  string_of_progress:
+    requested: Requested
+    canceled: Canceled
+    holded: Holded
+    accepted: Accepted
+    rejected: Rejected
+    unpublished: Unpublished
+  alerts:
+    bank_account:
+      save:
+        success: "%{model} was Updated."
+        failure: "%{model} was failed to update."
+      delete:
+        success: "%{model} was Deleted."
+        failure: "%{model} was failed to delete."
+    profile:
+      save:
+        success: "%{model} was Updated."
+    profile_images:
+      save:
+        success: "%{model} Image was Updated."
+    identification:
+      save:
+        success: "%{model} was Uploaded."
+        failure: "%{model} was failed to upload."
+      delete:
+        success: "%{model} was Deleted"
+        failure: "%{model} was failed to deleted"
+      check:
+        not_yet: "Upload %{model}"
+        under_review: "Your %{model} is now under review. Please wait a moment."
+    inquiry:
+      save:
+        success: "Thank you for your %{model}. We'll contact you as soon as possible."
+        failure: "Your %{model} was failed to upload."
+    listings:
+      save:
+        success: "%{model} was successfully generated. Next, input more information."
+      update:
+        success: "%{model} was successfully updated."
+        failure: "%{model} was failed to updated."
+      set_lon_lat:
+        error: "Failed to get lon lat. Input accurate location."
+      publish:
+        success: "%{model} is now open!"
+        failure: "You need a few steps to publish your %{model}."
+      unpublish:
+        success:
+        failure: "Failed to publish your %{model}."
+      error:
+        invalid_listing_id: "No %{model} was found."
+    listing_images:
+      save:
+        success: "%{model} was successfully uploaded!"
+        failure: "%{model} could not be uploaded."
+    listing_ngevents:
+      reason:
+        holiday: "Unavailable"
+        reserved: "Already reserved"
+        canceled: "Canceled"
+    reservation:
+      save:
+        success: "Requested %{model}. Please confirm your request and wait for %{msg} from %{host}."
+        failure:
+          no_date: "Input Date"
+      requirement:
+        profile:
+          not_yet: "Complete %{model}"
+        profile_image:
+          not_yet: "Upload %{model}"
+      msg:
+        request: "%{model} request was sent."
+    review:
+      save:
+        success: "%{model} was successfully posted. Wait for reply from %{host}."
+        failure: "%{model} couldn't be posted."
+    review_reply:
+      save:
+        success: "%{model} was successfully completed. %{review} is now open! Please confirm it."
+        failure: "%{model} was failure."
+    regulate_user:
+      reservation_id:
+        failure: "You cannot access to this page. %{rsrv} ID is invalid."
+      user_id:
+        failure: "You cannot access to this page. ID is invalid."
+      entry:
+        duplicated: "Already posted."
+      review_not_found: "You cannot access to this page. %{review} was not found."
+      cancan:
+        failure: "You cannot access to this page. No authority."
+    regulate_term:
+      expired: "The term to write %{review} has been passed.。"
+  views:
+    identifications:
+      form:
+        header: Required
+        available_types: Available Identification types
+        images: Images
+        add_files: Add files
+        status: Status
+        approved: Approved
+        processing: Processing
+        reason_placeholder: Input reason of rejection
+        update: Update
+        update_msg: If you wants update your identification, please delete it first.
+        delete: delete
+        confirm: You cannot cancel this operation after click yes.You sure?
+        submit: Save
+    bank_accounts:
+      form:
+        header: Required
+        submit: Save
+  simple_form:
+    processing: Processing...
+  enums:
+    identification:
+      status:
+        not_yet: Not Yet
+        approved: Approved
+        rejected: Rejected

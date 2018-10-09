@@ -1,0 +1,9 @@
+ul.sidenav-list
+  li
+    = link_to t('.edit'), edit_profile_path, class: "sidenav-item", aria: {selected: (controller_name == 'profiles')}
+  li
+    = link_to t('.edit_image'), edit_profile_profile_image_path, class: "sidenav-item", aria: {selected: (controller_name == 'profile_images')}
+  li
+    = link_to t('.edit_identification'), profile_identification_url, class: "sidenav-item", aria: { selected: (controller_name == 'identifications')}
+  li
+    = link_to t('.edit_bank_account'), profile_bank_account_url, class: "sidenav-item", aria: { selected: (controller_name == 'bank_account')}

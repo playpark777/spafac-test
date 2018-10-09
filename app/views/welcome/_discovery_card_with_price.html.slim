@@ -1,0 +1,15 @@
+.discovery-card.discovery-listing[style="background-image: url(#{listing.cover_image.url});"]
+  .card-overlay-bottom-left.card-overlay-label.card-overlay-listing-label
+    sup.h6.text-contrast
+      = t 'unit.price'
+    span.h3.price-amount
+      = listing.price
+    sup.h6.text-contrast
+  .va-container.va-container-v.va-container-h
+    .va-middle.text-center.text-contrast
+      .media-photo.media-round.row-space-2.card-profile-picture
+        = image_tag profile_image_thumb(listing.user_id), class: "size50"
+      .h3.strong
+        = discovery_image.tagline
+      /div
+        /= t '.item.category_name'

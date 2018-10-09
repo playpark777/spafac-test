@@ -1,0 +1,60 @@
+- provide :title, t('.page_title')
+
+.page-container-full
+  .card.card-bald.card-wax.row-space-8
+    .card-body.card-light
+      div[role="dummy"]
+      .row.row-space-top-6.row-space-6
+        .col-10.col-center.text-center
+          h1.h2
+            = t('.page_title')
+      div[role="dummy"]
+    .card-body.card-medium
+      .page-container
+        = simple_form_for(@inquiry, html: { class: 'form--sp' }) do |f|
+          = f.error_notification
+
+          .row.row-space-5.row-space-top-5.row-table
+            .col-xs-4.text-right.col-middle
+              .h4.text-light
+                = Inquiry.human_attribute_name :title
+            .col-xs-8.fieldset.col-middle
+              .row
+                .col-xs-11
+                  = f.hidden_field :title
+                  = @inquiry.title
+
+          .row.row-space-5.row-space-top-5.row-table
+            .col-xs-4.text-right.col-middle
+              .h4.text-light
+                = Inquiry.human_attribute_name :name
+            .col-xs-8.fieldset.col-middle
+              .row
+                .col-xs-11
+                  = f.hidden_field :name
+                  = @inquiry.name
+
+          .row.row-space-5.row-space-top-5.row-table
+            .col-xs-4.text-right.col-middle
+              .h4.text-light
+                = Inquiry.human_attribute_name :email
+            .col-xs-8.fieldset.col-middle
+              .row
+                .col-xs-11
+                  = f.hidden_field :email
+                  = @inquiry.email
+
+          .row.row-space-5.row-space-top-5.row-table
+            .col-xs-4.text-right.col-middle
+              .h4.text-light
+                = Inquiry.human_attribute_name :body
+            .col-xs-8.fieldset.col-middle
+              .row
+                .col-xs-11
+                  = f.hidden_field :body, as: :text, rows: 12
+                  = simple_format(@inquiry.body)
+
+          .row
+            .col-xs-9.col-offset-3.text-reset-center
+              = f.button :submit, t('.submit'), class: 'btn-primary btn-large'
+

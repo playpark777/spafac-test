@@ -1,0 +1,71 @@
+= simple_form_for(identification, url: profile_identification_url,
+  as: :identification, html: { class: "form--sp" }) do |f|
+  = f.error_notification
+
+  .card.row-space-4
+    .card-header
+      = t('views.identifications.form.header')
+    .card-body
+      .row.row-condensed.row-space-4
+        label.text-right.col-3
+          = t('views.identifications.form.available_types')
+        .col-8
+          ul
+            - IdentificationType.availables.each do |id_type|
+              li = id_type.name
+
+      - if current_user.identification.new_record?
+        .row.row-condensed.row-space-4
+          label.text-right.col-3
+            = t('views.identifications.form.images')
+          .col-8
+            ul.list-unstyled.identification-attachments
+              li
+                = f.file_field :image1, class: "row-space-top-1-file"
+            = link_to "[+] #{t('views.identifications.form.add_files')}",
+              'javascript:void(0)', class: 'add-identification-attachment'
+
+      - else
+        .row.row-condensed.row-space-4
+          .text-right.col-3
+            = t('views.identifications.form.status')
+          .col-8
+            - if current_user.identification_approved?
+              = t('views.identifications.form.approved')
+            - else
+              = t('views.identifications.form.processing')
+
+        .row.row-condensed.row-space-4
+          label.text-right.col-3
+            = Identification.human_attribute_name :image1
+          = image_tag(identification.image1.url, width: '320px')
+
+          - if identification.image2.present?
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = Identification.human_attribute_name :image2
+              = image_tag(identification.image2.url, width: '320px')
+          - if identification.image3.present?
+            .row.row-condensed.row-space-4
+              label.text-right.col-3
+                = Identification.human_attribute_name :image3
+              = image_tag(identification.image3.url, width: '320px')
+
+        .row.row-condensed.row-space-4
+          label.text-right.col-3
+            = t('views.identifications.form.update')
+          .col-8
+            ul.list-unstyled.identification-attachments
+              li
+                = f.file_field :image1, class: "row-space-top-1-file"
+            = link_to "[+] #{t('views.identifications.form.add_files')}",
+              'javascript:void(0)', class: 'add-identification-attachment'
+
+      .row.row-condensed.row-space-4
+        label.text-right.col-3
+          = Identification.human_attribute_name :note
+        .col-8
+          = f.input_field :note
+
+  = f.button :submit, t('views.identifications.form.submit'), class: "btn btn-primary btn-large row-space-4"
+

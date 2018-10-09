@@ -1,0 +1,27 @@
+- if belt_image.image_flg
+  .hero-wrapper
+    #hero
+      ul#slideshow.list-unstyled
+        li.active
+          = image_tag belt_image.image.url
+    .hero-contents.text-center
+      .va-container.va-container-wh
+        .hero-inner
+          h1#tagline.uppercase.text-jumbo.text-contrast.row-space-1
+            = belt_image.tagline
+            .col-sm-12
+              #subtitle.h4.text-contrast.row-space-4
+                /= t('.subtitle')
+                = belt_image.sub_tagline
+- else
+  .hero-wrapper[style="background-color: #{belt_image.color}"]
+    #hero
+      ul#slideshow.list-unstyled
+    .hero-contents.text-center
+      .va-container.va-container-wh
+        .hero-inner
+          h1#tagline.uppercase.text-jumbo.text-contrast.row-space-1
+            = belt_image.tagline
+            .col-sm-12
+              #subtitle.h4.text-contrast.row-space-4
+                = belt_image.sub_tagline

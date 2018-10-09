@@ -1,0 +1,53 @@
+footer
+  .footer-content-container
+    .row
+      .col-sm-3.hide--sp
+        form name="lang_selector"
+          select name="langs"
+            - I18n.available_locales.each do |l|
+              option [value="#{i18n_url_for(params.merge(locale: l))}" selected=(l if l == I18n.locale)] = Settings.langs[l].to_s
+      .col-sm-3.hide--sp
+        h5
+          = t '.corporate.title'
+        ul.list-unstyled
+          li
+            = link_to t('.corporate.about'), '#'
+          li
+            = link_to t('.corporate.inquiry'), new_inquiry_url
+          li
+            = link_to t('.corporate.privacy'), '#'
+      .col-sm-4.col-sm-offset-4.show--sp
+        form name="lang_selector"
+          select name="langs2"
+            - I18n.available_locales.each do |l|
+              option [value="#{i18n_url_for(params.merge(locale: l))}" selected=(l if l == I18n.locale)] = Settings.langs[l].to_s
+      .cml-sm-12.row-space-4.show--sp
+        ul.list-layout.list-inline.text-center.h5.footer-links--sp
+          li
+            = link_to t('.corporate.about'), "#", class: "link-contrast"
+          li
+            = link_to t('.corporate.inquiry'), new_inquiry_url
+          li
+            = link_to t('.corporate.privacy'), "#", class: "link-contrast"
+    hr.hide--sp
+    .sns-container.text-center
+      h5.hide--sp
+        = t '.social_media.title'
+      ul.list-unstyled.list-inline
+        li
+          = link_to '#' do
+            i.fa.fa-facebook
+        li
+          = link_to '#' do
+            i.fa.fa-google-plus
+        li
+          = link_to '#' do
+            i.fa.fa-twitter
+        li
+          = link_to '#' do
+            i.fa.fa-instagram
+        li
+          = link_to '#' do
+            i.fa.fa-pinterest
+    #copyright.row-space-top-2.text-center
+      = t '.copyright'

@@ -1,0 +1,10 @@
+- mode = nil unless defined?(mode)
+- devise_error_messages! mode
+- if flash.now[:messages]
+  .alert-error-messages
+    div
+      li.error_title
+        = f.error_notification
+      - flash.now[:messages].each do |msg|
+        li
+          = msg

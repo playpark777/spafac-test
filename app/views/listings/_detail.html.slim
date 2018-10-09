@@ -1,0 +1,54 @@
+.page-container
+  .row
+    #details-column.col-lg-8
+      .row-space-8.row-space-top-8
+        h4.row-space-4
+          = t('.about_this_listing')
+        .listing-description
+          = simple_format(listing.description)
+        p.text-center--sp
+          - if user_signed_in?
+            - if current_user.id == listing.user_id
+              button.btn.btn-small.btn-primary.disabled
+                = t('.contact_to_host')
+            - else
+              button#message-host-link.btn.btn-small.btn-primary
+                = t('.contact_to_host')
+          - else
+            = link_to new_user_session_path do
+              button.btn.btn-small.btn-primary
+                = t('.contact_to_host')
+        .row-space-4.row-space-top-4
+          = render partial: 'image_detail', locals: { listing: listing }
+                
+        hr
+        .row
+          .col-md-3.text-muted
+            = Listing.human_attribute_name :capacity
+          .col-md-9
+            .row-space-1
+              span
+                = listing.capacity
+                = t('unit.people')
+        hr
+        .row
+          .col-md-3
+            .text-muted
+              = t('.delivery')
+          .col-md-9
+            .row
+              .col-md-6
+                = render partial: 'delivery_ok_button', locals: { listing: listing }
+        hr
+        .row
+          .col-md-3
+            .text-muted
+              = Listing.human_attribute_name :price
+          .col-md-9
+            .row
+              .col-md-6
+                div
+                  b
+                    span#extra_price_strin
+                      = t('unit.price')
+                      = listing.price

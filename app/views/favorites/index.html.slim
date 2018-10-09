@@ -1,0 +1,44 @@
+- provide :title, t('.title')
+= render 'shared/subnav'
+.page-container.row-space-top-4.row-space-4
+  .row
+    .col-md-3
+      = render partial: "shared/host_sidenav"
+
+    - if @favorites.blank?
+      .col-md-9
+        .card
+          .card-body
+            h3
+              = t('.no_favorites.title')
+            p.text-lead.row-space-4
+              = t('.no_favorites.guests_waiting')
+              br
+              = t('.no_favorites.invitation')
+    - else
+      .col-md-9
+        .card
+          .card-header
+            .row
+              .col-sm-12
+                = t('.title')
+          .suspension-container
+            ul.list-unstyled.list-layout
+              - @favorites.each do |favorite|
+                - listing = Listing.find(favorite.listing_id)
+                li.listing.card-body
+                  .row.row-table
+                    .col-xs-4.col-lg-2
+                      .media-photo.media-photo-block
+                        .media-cover.text-center
+                          = image_tag(listing_cover_image_url(listing.id), class: "img-responsive-height")
+                    .col-xs-8.col-lg-6
+                      span.h4
+                        = link_to listing, class: "text-normal trans" do
+                          = listing.title
+                    .col-md-12.col-lg-4
+                      .pull-right.pull-change
+                        .listing-criteria-header.activation-notification
+                          .listing-criteria-header-message
+                            = favorite_link(listing.id)
+        = paginate @favorites

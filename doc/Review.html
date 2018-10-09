@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Review
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!Review.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (R)</a> &raquo;
+    
+    
+    <span class="title">Review</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><h1>Class: Review
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">ActiveRecord::Base</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">ActiveRecord::Base</li>
+          
+            <li class="next">Review</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">app/models/review.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>== Schema Information</p>
+
+<p>Table name: reviews</p>
+
+<p>id               :integer          not null, primary key
+ guest_id         :integer
+ host_id          :integer
+ reservation_id   :integer
+ listing_id       :integer
+ accuracy         :integer          default(0)
+ communication    :integer          default(0)
+ cleanliness      :integer          default(0)
+ location         :integer          default(0)
+ check_in         :integer          default(0)
+ cost_performance :integer          default(0)
+ total            :integer          default(0)
+ msg              :text             default(“”)
+ created_at       :datetime         not null
+ updated_at       :datetime         not null</p>
+
+<p>Indexes</p>
+
+<p>index_reviews_on_guest_id        (guest_id)
+ index_reviews_on_host_id         (host_id)
+ index_reviews_on_listing_id      (listing_id)
+ index_reviews_on_reservation_id  (reservation_id)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#calc_ave_of_listing-instance_method" title="#calc_ave_of_listing (instance method)">- (Object) <strong>calc_ave_of_listing</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#calc_ave_of_profile-instance_method" title="#calc_ave_of_profile (instance method)">- (Object) <strong>calc_ave_of_profile</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#calc_average-instance_method" title="#calc_average (instance method)">- (Object) <strong>calc_average</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="calc_ave_of_listing-instance_method">
+  
+    - (<tt>Object</tt>) <strong>calc_ave_of_listing</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/review.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_calc_ave_of_listing'>calc_ave_of_listing</span>
+  <span class='id identifier rubyid_l'>l</span> <span class='op'>=</span> <span class='const'>Listing</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_listing_id'>listing_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_r_count'>r_count</span> <span class='op'>=</span> <span class='const'>Review</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>listing_id:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_listing_id'>listing_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
+  <span class='id identifier rubyid_ave_total'>ave_total</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_ave_total'>ave_total</span> <span class='op'>+</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_total'>total</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_r_count'>r_count</span>
+  <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_ave_total'>ave_total</span> <span class='op'>=</span> <span class='id identifier rubyid_ave_total'>ave_total</span>
+  <span class='id identifier rubyid_l'>l</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="calc_ave_of_profile-instance_method">
+  
+    - (<tt>Object</tt>) <strong>calc_ave_of_profile</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+68
+69
+70
+71
+72
+73
+74</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/review.rb', line 68</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_calc_ave_of_profile'>calc_ave_of_profile</span>
+  <span class='id identifier rubyid_prof'>prof</span> <span class='op'>=</span> <span class='const'>Profile</span><span class='period'>.</span><span class='id identifier rubyid_find'>find</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_host_id'>host_id</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_r_count'>r_count</span> <span class='op'>=</span> <span class='const'>Review</span><span class='period'>.</span><span class='id identifier rubyid_where'>where</span><span class='lparen'>(</span><span class='label'>host_id:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_host_id'>host_id</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_count'>count</span>
+  <span class='id identifier rubyid_ave_total'>ave_total</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_prof'>prof</span><span class='period'>.</span><span class='id identifier rubyid_ave_total'>ave_total</span> <span class='op'>+</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_total'>total</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_r_count'>r_count</span>
+  <span class='id identifier rubyid_prof'>prof</span><span class='period'>.</span><span class='id identifier rubyid_ave_total'>ave_total</span> <span class='op'>=</span> <span class='id identifier rubyid_ave_total'>ave_total</span>
+  <span class='id identifier rubyid_prof'>prof</span><span class='period'>.</span><span class='id identifier rubyid_save'>save</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="calc_average-instance_method">
+  
+    - (<tt>Object</tt>) <strong>calc_average</strong> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/models/review.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_calc_average'>calc_average</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_calc_ave_of_listing'>calc_ave_of_listing</span>
+  <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_calc_ave_of_profile'>calc_ave_of_profile</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+    <div id="footer">
+  Generated on Mon Dec 28 19:23:44 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-2.2.1).
+</div>
+
+  </body>
+</html>

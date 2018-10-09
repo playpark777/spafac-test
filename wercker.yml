@@ -1,0 +1,58 @@
+box: ruby:2.4.2
+services:
+    - id: postgres
+      env:
+          POSTGRES_PASSWORD: secret_password
+build:
+    steps:
+        - bundle-install
+
+        - rails-database-yml:
+            service: postgresql-docker
+
+        - script:
+            name: echo ruby information
+            code: |
+                echo "ruby version $(ruby --version) running"
+                echo "from location $(which ruby)"
+                echo -p "gem list: $(gem list)"
+
+        - script:
+            name: Setup DB
+            code: bundle exec rake db:schema:load RAILS_ENV=test
+
+        - script:
+            name: rspec
+            code: bundle exec rspec
+
+    after-steps:
+        - wantedly/pretty-slack-notify:
+            webhook_url: $SLACK_WEBHOOK_URL_DEPLOY
+            channel: SLACK_WEBHOOK_CHANNEL_DEPLOY
+
+deploy:
+    steps:
+        - heroku-deploy:
+            install-toolbelt: true
+            key: $HEROKU_KEY
+            key-name: HEROKU_SSH_KEY
+            user: $HEROKU_USER
+            app-name: $HEROKU_APP_NAME
+
+        - script:
+            name: Confirm Heroku version
+            code: heroku --version
+
+        - script:
+            name: Update DB
+            code: heroku run rake db:migrate --app $HEROKU_APP_NAME
+
+        - script:
+            name: Precompile assets
+            code: heroku run rake assets:precompile --app $HEROKU_APP_NAME
+
+    after-steps:
+        - wantedly/pretty-slack-notify:
+            webhook_url: $SLACK_WEBHOOK_URL_DEPLOY
+            channel: $SLACK_WEBHOOK_CHANNEL_DEPLOY
+

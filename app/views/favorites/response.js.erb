@@ -1,0 +1,7 @@
+<% if @type == 'btn' %>
+	<% favo_link = favorite_btn_link(@favorite.listing_id) %>
+	$('.favorite.listing-<%= @favorite.listing_id %>').replaceWith('<%=j favo_link.html_safe %>');
+<% else %>
+	<% favo_link = favorite_link(@favorite.listing_id) %>
+	$('.favorite.listing-<%= @favorite.listing_id %>').replaceWith('<%=j favo_link.html_safe %>');
+<% end %>

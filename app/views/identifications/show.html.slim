@@ -1,0 +1,42 @@
+= render partial: 'shared/subnav'
+
+.page-container.row-space-top-4.row-space-8
+  .row
+    .col-lg-3
+      = render partial: 'shared/profile_sidenav'
+    .col-lg-9
+      .card.row-space-4
+        .card-header
+          = t('views.identifications.form.header')
+        .card-body
+          .row.row-condensed.row-space-4
+            .text-right.col-3
+              = t('views.identifications.form.status')
+            .col-8
+              - if current_user.identification_approved?
+                = t('views.identifications.form.approved')
+              - else
+                = t('views.identifications.form.processing')
+
+          .row.row-condensed.row-space-4
+            label.text-right.col-3
+              = Identification.human_attribute_name :image1
+            = image_tag(@identification.image1.url, width: '320px')
+
+            - if @identification.image2.present?
+              .row.row-condensed.row-space-4
+                label.text-right.col-3
+                  = Identification.human_attribute_name :image2
+                = image_tag(@identification.image2.url, width: '320px')
+            - if @identification.image3.present?
+              .row.row-condensed.row-space-4
+                label.text-right.col-3
+                  = Identification.human_attribute_name :image3
+                = image_tag(@identification.image3.url, width: '320px')
+
+          .row.row-condensed.row-space-4
+            .col-8.col-offset-3
+              label = t('views.identifications.form.update_msg')
+              = link_to t('views.identifications.form.delete'), profile_identification_path,
+                class: 'btn btn-danger pull-right', method: :delete, title: @identification,
+                data: { confirm: t('views.identifications.form.confirm') }
