@@ -42,10 +42,10 @@ user:
     noname: "未設定"
 devise:
   mailer:
-    sender: 'please-change-me-at-config-initializers-devise@example.com'
+    sender: 'sns@playparknavi.com'
 mailer:
   from:
-    default: "default-from-email@example.com"
+    default: "sns@playparknavi.com"
 review:
   expiration_date: 14
 langs:
